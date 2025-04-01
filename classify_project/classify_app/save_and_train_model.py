@@ -1,38 +1,10 @@
 import pandas as pd
-import numpy as np
 import joblib  
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import os
-
-
-def generate_insurance_dataset():
-    """Generate a synthetic insurance dataset with 10,000 entries."""
-    np.random.seed(42)  
-    
-    
-    ages = np.random.normal(45, 12, 10000).astype(int)
-    ages = np.clip(ages, 18, 85)  
-    
-    
-    salaries = np.random.lognormal(mean=11, sigma=0.4, size=10000)
-    salaries = np.round(salaries, -2).astype(int)  
-    
-    
-    probabilities = 0.3 + 0.4 * (ages > 40).astype(float) + 0.3 * (salaries > 60000).astype(float)
-    probabilities = np.clip(probabilities, 0.1, 0.9)  
-    
-    buys_insurance = (np.random.random(10000) < probabilities).astype(int)
-    
-    
-    data = {
-        "Age": ages,
-        "Salary": salaries,
-        "Buys_Insurance": buys_insurance
-    }
-    
-    return pd.DataFrame(data)
+from .classifier import predict_insurance
 
 def train_and_save_model():
     """Generate data, train model, and save to disk. Only run this function once."""
@@ -41,10 +13,7 @@ def train_and_save_model():
     
     
     if not os.path.exists(excel_file):
-        print("Generating new dataset...")
-        df = generate_insurance_dataset()
-        df.to_excel(excel_file, index=False)
-        print(f"Dataset saved to {excel_file}")
+        print("No data found")
     else:
         print(f"Loading existing dataset from {excel_file}")
         df = pd.read_excel(excel_file)
@@ -74,19 +43,6 @@ def train_and_save_model():
     print(f"Model Accuracy: {accuracy}")
     
     return accuracy
-
-def predict_insurance(age: int, salary: int):
-    """Make a prediction using the saved model.
-    
-    Args:
-        age: Age of the person
-        salary: Annual salary of the person
-        
-    Returns:
-        1 if the person is predicted to buy insurance, 0 otherwise
-    """
-    loaded_model = joblib.load("insurance_model.pkl")
-    return loaded_model.predict([[age, salary]])[0]
 
 
 
