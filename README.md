@@ -4,11 +4,12 @@
 
 ## 👥 Group 10 Members
 
-1. **Mbugua Maxwel (P101/1795G/21)**
-2. **Felix Mokaya Amwoma (P101/1823G/21)**
-3. **Samuel kariuki (p101/1725g/21)**
-4. **Bithon Macharia (p101/1774g/21)**
-5. **David Murichu (p101/1720g/21)**
+ 
+1. **Samuel kariuki (p101/1725g/21)**
+2. **Bithon Macharia (p101/1774g/21)**
+3. **David Murichu (p101/1720g/21)**
+4. **Mbugua Maxwel (P101/1795G/21)**
+5. **Felix Mokaya Amwoma (P101/1823G/21)**
 6. **Morris Kamande (p101/1721g/21)**
 7. **Victor Gabriel (kahihu P101/1715G/21)**
 8. **Robert Mburu (P101/1755g/21)**
