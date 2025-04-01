@@ -64,6 +64,10 @@
             background-color: #f8d7da;
             color: #721c24;
         }
+        .error-message {
+            color: #dc3545;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -76,24 +80,26 @@
         
         <div class="mb-3">
             <label for="age" class="form-label">Enter Your Age:</label>
-            <input type="number" id="age" name="age" class="form-control" required>
+            <input type="number" id="age" name="age" class="form-control" value="{{ age }}" required>
         </div>
         
         <div class="mb-3">
             <label for="salary" class="form-label">Enter Your Salary ($):</label>
-            <input type="number" id="salary" name="salary" class="form-control" required>
+            <input type="number" id="salary" name="salary" class="form-control" value="{{ salary }}" required>
         </div>
         
         <button type="submit" class="btn btn-primary">Predict</button>
     </form>
 
-    {% if result is not None %}
-        <div class="result alert {% if result == 1 %}alert-success{% else %}alert-danger{% endif %}">
-            {% if result == 1 %}
-                ✅ You **will** buy insurance!
-            {% else %}
-                ❌ You **won't** buy insurance.
-            {% endif %}
+    {% if error %}
+        <div class="error-message mt-3">
+            {{ error }}
+        </div>
+    {% endif %}
+
+    {% if result %}
+        <div class="result alert {% if prediction == 1 %}alert-success{% else %}alert-danger{% endif %}">
+            {{ result }}
         </div>
     {% endif %}
 </div>
