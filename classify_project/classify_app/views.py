@@ -30,10 +30,10 @@ def classify_view(request):
                     context["salary"] = salary_str
                     
                     
-                    if age < 18 or age > 100:
+                    if age < 18 or age > 120:
                         context["error"] = "Age must be between 18 and 100."
-                    elif salary < 10000:
-                        context["error"] = "Salary must be at least 10,000."
+                    elif salary < 8000:
+                        context["error"] = "Salary must be at least 8,000."
                     else:
                         
                         prediction = predict_insurance(age, salary)
