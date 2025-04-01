@@ -1,5 +1,14 @@
 # Django Classification Project - Group 10
 
+---
+
+## 👥 Group 10 Members
+
+1. **Felix Mokaya Amwoma (P101/1823G/21)**
+(Add Your Names here wazee)
+
+---
+
 ## 📌 Project Overview
 
 This is a Django-based classification project that predicts whether a person will buy insurance based on their age and salary. The model uses a **simple machine learning classifier** to make predictions.
@@ -68,21 +77,21 @@ Then, open **<http://127.0.0.1:8000/classify/>** in your browser.
 ## 📂 Project Structure
 
 ```
-classify_project/
-│── classify_project/        # Main Django project folder
-│   │── settings.py         # Project settings
-│   │── urls.py             # Project URL configuration
-│── classify_app/           # Django app folder
-│   │── models.py          # Data model (optional if using ML only)
-│   │── views.py           # Backend logic for classification
-│   │── urls.py            # App URLs
-│   │── templates/         # Frontend templates
-│       │── classify.html  # Main UI for prediction
-│── static/                # CSS, JS, images (if needed)
-│── db.sqlite3             # SQLite database
-│── manage.py              # Django CLI
-│── requirements.txt       # Python dependencies
-│── README.md              # This file
+    classify_project/
+    │── classify_project/        # Main Django project folder
+    │   │── settings.py         # Project settings
+    │   │── urls.py             # Project URL configuration
+    │── classify_app/           # Django app folder
+    │   │── models.py          # Data model (optional if using ML only)
+    │   │── views.py           # Backend logic for classification
+    │   │── urls.py            # App URLs
+    │   │── templates/         # Frontend templates
+    │       │── classify.html  # Main UI for prediction
+    │── static/                # CSS, JS, images (if needed)
+    │── db.sqlite3             # SQLite database
+    │── manage.py              # Django CLI
+    │── requirements.txt       # Python dependencies
+    │── README.md              # This file
 ```
 
 ---
@@ -146,15 +155,6 @@ classify_project/
 - ✅ Improve UI with animations.
 - ✅ Store user predictions in the database for analysis.
 - ✅ Experiment with **other classification techniques** (e.g., Decision Trees, SVM).
-
----
-
-## 👥 Group 10 Members
-
-1. **Felix Mokaya Amwoma (P101/1823G/21)**
-(Add Your Names here wazee)
-
----
 
 ## 📜 License
 
