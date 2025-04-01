@@ -4,7 +4,9 @@
 
 ## 👥 Group 10 Members
 
-1. **Felix Mokaya Amwoma (P101/1823G/21)**  
+1. **Mbugua Maxwel (P101/1795G/21)**  
+
+2. **Felix Mokaya Amwoma (P101/1823G/21)**  
 (Add Your Names here wazee)
 
 ---
