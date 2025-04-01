@@ -1,4 +1,5 @@
 import pandas as pd
+import joblib  # For saving and loading the model
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
@@ -20,10 +21,15 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model = RandomForestClassifier()
 model.fit(X_train, y_train)
 
+# Save the model
+joblib.dump(model, "insurance_model.pkl")
+print("Model saved as insurance_model.pkl")
+
 # Check accuracy
 y_pred = model.predict(X_test)
 print(f"Model Accuracy: {accuracy_score(y_test, y_pred)}")
 
-# Function to predict
-def predict_insurance(age, salary):
-    return model.predict([[age, salary]])[0]
+# Function to predict using saved model
+def predict_insurance(age: int, salary: int):
+    loaded_model = joblib.load("insurance_model.pkl")  # Load the saved model
+    return loaded_model.predict([[age, salary]])[0]
