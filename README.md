@@ -4,7 +4,6 @@
 
 ## 👥 Group 10 Members
 
- 
 1. **Samuel kariuki (p101/1725g/21)**
 2. **Bithon Macharia (p101/1774g/21)**
 3. **David Murichu (p101/1720g/21)**
