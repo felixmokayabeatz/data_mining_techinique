@@ -8,21 +8,22 @@ import os
 
 
 def generate_insurance_dataset():
-    """Generate a synthetic insurance dataset."""
+    """Generate a synthetic insurance dataset with 10,000 entries."""
     np.random.seed(42)  
     
-    
-    ages = np.random.normal(45, 12, 1000).astype(int)
+    # Changed size from 1000 to 10000
+    ages = np.random.normal(45, 12, 10000).astype(int)
     ages = np.clip(ages, 18, 85)  
     
-    
-    salaries = np.random.lognormal(mean=11, sigma=0.4, size=1000)
+    # Changed size from 1000 to 10000
+    salaries = np.random.lognormal(mean=11, sigma=0.4, size=10000)
     salaries = np.round(salaries, -2).astype(int)  
     
-    
+    # The probabilities calculation remains the same
     probabilities = 0.3 + 0.4 * (ages > 40).astype(float) + 0.3 * (salaries > 60000).astype(float)
     probabilities = np.clip(probabilities, 0.1, 0.9)  
-    buys_insurance = (np.random.random(1000) < probabilities).astype(int)
+    # Changed size from 1000 to 10000
+    buys_insurance = (np.random.random(10000) < probabilities).astype(int)
     
     
     data = {
